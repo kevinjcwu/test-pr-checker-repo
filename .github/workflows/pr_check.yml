@@ -19,10 +19,8 @@ jobs:
           fetch-depth: 0 # Fetch all history so we can get the diff
 
       - name: Run PR Intent Checker
-        # IMPORTANT: Replace 'your-username/pr-intent-checker@main' with the
-        # actual path to your action repository on GitHub (e.g., github_username/repo_name@branch_or_tag)
-        # Ensure the pr-intent-checker repository is public or accessible to this workflow.
-        uses: your-username/pr-intent-checker@main
+        # Using the PR Intent Checker action from the dedicated repository
+        uses: kevinjcwu/pr-intent-checker@main
         id: intent_checker # Give the step an ID to potentially reference outputs
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
