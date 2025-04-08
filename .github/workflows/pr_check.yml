@@ -24,7 +24,10 @@ jobs:
         id: intent_checker # Give the step an ID to potentially reference outputs
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          openai_api_key: ${{ secrets.OPENAI_API_KEY }} # Needs to be added as a secret in the test repo settings
+          # Pass Azure credentials from secrets
+          azure_openai_endpoint: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          azure_openai_key: ${{ secrets.AZURE_OPENAI_KEY }}
+          azure_openai_deployment: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
 
       # Optional: Add a step to explicitly fail the job if the checker failed
       # The action itself exits with 1 on failure, which should fail the job by default,
