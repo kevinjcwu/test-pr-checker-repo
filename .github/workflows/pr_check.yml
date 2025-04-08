@@ -1,0 +1,38 @@
+name: Test PR Intent Checker
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened] # Trigger on PR creation, updates, reopening
+
+permissions:
+  contents: read       # Need read access to checkout code
+  pull-requests: write # Need write access to post comments back to the PR
+  issues: read         # Need read access to fetch linked issue details
+
+jobs:
+  intent-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history so we can get the diff
+
+      - name: Run PR Intent Checker
+        # IMPORTANT: Replace 'your-username/pr-intent-checker@main' with the
+        # actual path to your action repository on GitHub (e.g., github_username/repo_name@branch_or_tag)
+        # Ensure the pr-intent-checker repository is public or accessible to this workflow.
+        uses: your-username/pr-intent-checker@main
+        id: intent_checker # Give the step an ID to potentially reference outputs
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }} # Needs to be added as a secret in the test repo settings
+
+      # Optional: Add a step to explicitly fail the job if the checker failed
+      # The action itself exits with 1 on failure, which should fail the job by default,
+      # but this makes it more explicit.
+      - name: Check result from intent checker
+        if: steps.intent_checker.outputs.result == 'FAIL'
+        run: |
+          echo "Intent Check Failed based on LLM evaluation."
+          exit 1
