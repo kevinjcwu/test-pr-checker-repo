@@ -1,8 +1,8 @@
 # Sample Python code for testing the PR Intent Checker
 
 def greet(name):
-  """Returns a simple greeting."""
-  return f"Hello, {name}!"
+  """Returns a more enthusiastic greeting."""
+  return f"Hello, {name}!!! Welcome!"
 
 def add(a, b):
   """Calculates the sum of two numbers."""
