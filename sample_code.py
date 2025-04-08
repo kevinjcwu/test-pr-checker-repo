@@ -9,6 +9,8 @@ def add(a, b):
   # Intentionally simple for testing
   return a + b
 
+def subtract(a, b):
+  """Calculates the difference between two numbers."""
+  return a - b
+
 # Placeholder for future functions
-# def subtract(a, b):
-#   pass
