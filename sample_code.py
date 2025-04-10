@@ -26,10 +26,8 @@ def process_user_data(user_list):
   for user in user_list:
     # Correctly checks if user is active (assuming 'is_active' key exists)
     if user.get('is_active', False):
-      # INCORRECT: Appends the whole user dictionary
-      active_user_data.append(user)
-      # CORRECT implementation would be:
-      # if 'email' in user:
-      #   active_user_data.append(user['email'])
+      # CORRECT: Append only the email if it exists
+      if 'email' in user:
+          active_user_data.append(user['email'])
 
   return active_user_data
