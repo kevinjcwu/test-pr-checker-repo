@@ -34,15 +34,15 @@ def process_user_data(user_list):
 
 def factorial(n):
     """
-    Calculates the factorial of a number n.
-    INCORRECT: Returns n * 2 instead of factorial.
+    Calculates the factorial of a non-negative integer n using recursion.
+    Raises ValueError for negative input.
     """
     if not isinstance(n, int):
-         raise TypeError("Input must be an integer.")
+        raise TypeError("Input must be an integer.")
     if n < 0:
-        # Incorrectly handles negative numbers by returning 0 instead of raising ValueError
-        return 0
+        raise ValueError("Input must be a non-negative integer")
     if n == 0:
-        return 1 # Correct for n=0
-    # INCORRECT LOGIC:
-    return n * 2
+        return 1
+    else:
+        # Recursive step
+        return n * factorial(n - 1)
