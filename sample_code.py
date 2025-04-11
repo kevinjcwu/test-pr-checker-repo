@@ -12,30 +12,12 @@ def add(a, b):
 # def subtract(a, b):
 #   pass
 
-# # --- Process User Data Test Case ---
+# --- Process User Data Test Case ---
 
-# def process_user_data(user_list):
-#   """
-#   Processes a list of user records, filtering for active users.
-#   INCORRECT: Returns full user dicts instead of just emails.
-#   """
-#   if not user_list:
-#     return []
-
-#   active_user_data = []
-#   for user in user_list:
-#     # Correctly checks if user is active (assuming 'is_active' key exists)
-#     if user.get('is_active', False):
-#       # INCORRECT: Appends the whole user dictionary
-#       active_user_data.append(user)
-
-#   return active_user_data
-
-# --- CORRECT IMPLEMENTATION ---
 def process_user_data(user_list):
   """
-  Processes a list of user records, filtering for active users
-  and returning only their email addresses.
+  Processes a list of user records, filtering for active users.
+  INCORRECT: Returns full user dicts instead of just emails.
   """
   if not user_list:
     return []
@@ -44,8 +26,26 @@ def process_user_data(user_list):
   for user in user_list:
     # Correctly checks if user is active (assuming 'is_active' key exists)
     if user.get('is_active', False):
-      # CORRECT: Append only the email if it exists
-      if 'email' in user:
-          active_user_data.append(user['email'])
+      # INCORRECT: Appends the whole user dictionary
+      active_user_data.append(user)
 
   return active_user_data
+
+# # --- CORRECT IMPLEMENTATION ---
+# def process_user_data(user_list):
+#   """
+#   Processes a list of user records, filtering for active users
+#   and returning only their email addresses.
+#   """
+#   if not user_list:
+#     return []
+#
+#   active_user_data = []
+#   for user in user_list:
+#     # Correctly checks if user is active (assuming 'is_active' key exists)
+#     if user.get('is_active', False):
+#       # CORRECT: Append only the email if it exists
+#       if 'email' in user:
+#           active_user_data.append(user['email'])
+#
+#   return active_user_data
