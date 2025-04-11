@@ -29,3 +29,20 @@ def process_user_data(user_list):
           active_user_data.append(user['email'])
 
   return active_user_data
+
+# --- Factorial Test Case ---
+
+def factorial(n):
+    """
+    Calculates the factorial of a number n.
+    INCORRECT: Returns n * 2 instead of factorial.
+    """
+    if not isinstance(n, int):
+         raise TypeError("Input must be an integer.")
+    if n < 0:
+        # Incorrectly handles negative numbers by returning 0 instead of raising ValueError
+        return 0
+    if n == 0:
+        return 1 # Correct for n=0
+    # INCORRECT LOGIC:
+    return n * 2
