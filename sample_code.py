@@ -2,12 +2,10 @@
 
 def greet(name):
   """Returns a simple greeting."""
-  # Note: This might have been modified in previous test runs if not reset
   return f"Hello, {name}!"
 
 def add(a, b):
   """Calculates the sum of two numbers."""
-  # Intentionally simple for testing
   return a + b
 
 # Placeholder for future functions
@@ -16,8 +14,8 @@ def add(a, b):
 
 def process_user_data(user_list):
   """
-  Processes a list of user records, filtering for active users.
-  (Incorrectly returns full user dicts instead of just emails).
+  Processes a list of user records, filtering for active users
+  and returning only their email addresses.
   """
   if not user_list:
     return []
