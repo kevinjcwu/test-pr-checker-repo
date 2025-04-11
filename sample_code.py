@@ -12,7 +12,6 @@ def add(a, b):
 # def subtract(a, b):
 #   pass
 
-
 def process_user_data(user_list):
   """
   Processes a list of user records, filtering for active users
