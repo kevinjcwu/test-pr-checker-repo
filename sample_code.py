@@ -8,10 +8,6 @@ def add(a, b):
   """Calculates the sum of two numbers."""
   return a + b
 
-# Placeholder for future functions
-# def subtract(a, b):
-#   pass
-
 def process_user_data(user_list):
   """
   Processes a list of user records, filtering for active users
