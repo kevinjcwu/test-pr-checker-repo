@@ -29,3 +29,18 @@ def process_user_data(user_list):
           active_user_data.append(user['email'])
 
   return active_user_data
+
+def factorial(n):
+    """
+    Calculates the factorial of a non-negative integer n using recursion.
+    Raises ValueError for negative input.
+    """
+    if not isinstance(n, int):
+        raise TypeError("Input must be an integer.")
+    if n < 0:
+        raise ValueError("Input must be a non-negative integer")
+    if n == 0:
+        return 1
+    else:
+        # Recursive step
+        return n * factorial(n - 1)
