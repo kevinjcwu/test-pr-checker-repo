@@ -44,3 +44,7 @@ def factorial(n):
     else:
         # Recursive step
         return n * factorial(n - 1)
+
+def greet():
+    """Returns a greeting string."""
+    return "Goodbye from action"
