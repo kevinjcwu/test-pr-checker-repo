@@ -16,11 +16,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0 # Checkout the main repo (test-pr-checker-repo)
+
+      - name: Checkout Action Repo
+        uses: actions/checkout@v4
+        with:
+          repository: kevinjcwu/mcp-server-pkg-pr-intent-checker # Specify the action's repo
+          path: mcp-action-repo # Checkout the action repo into a sub-directory
 
       - name: Run PR Intent Checker (MCP Packaged Version - Local Test)
-        # Use relative path to test the local action
-        uses: ./../mcp-server-pkg-pr-intent-checker 
+        # Use the path where the action repo was checked out
+        uses: ./mcp-action-repo 
         id: intent_checker
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
