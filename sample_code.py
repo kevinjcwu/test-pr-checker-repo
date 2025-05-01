@@ -8,9 +8,8 @@ def add(a, b):
   """Calculates the sum of two numbers."""
   return a + b
 
-# Placeholder for future functions
-# def subtract(a, b):
-#   pass
+def multiply(a, b):
+  return a * b
 
 def process_user_data(user_list):
   """
