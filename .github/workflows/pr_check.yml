@@ -18,8 +18,9 @@ jobs:
         with:
           fetch-depth: 0 
 
-      - name: Run PR Intent Checker
-        uses: kevinjcwu/pr-intent-checker@mcp-integration # Use the branch with refactored code
+      - name: Run PR Intent Checker (MCP Packaged Version - Local Test)
+        # Use relative path to test the local action
+        uses: ./../mcp-server-pkg-pr-intent-checker 
         id: intent_checker
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
