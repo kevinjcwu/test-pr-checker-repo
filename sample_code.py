@@ -44,3 +44,9 @@ def factorial(n):
     else:
         # Recursive step
         return n * factorial(n - 1)
+
+def multiply(a, b):
+    """
+    Calculates the multiplication of two numbers a and b.
+    """
+    return a * b
