@@ -18,9 +18,9 @@ jobs:
         with:
           fetch-depth: 0 
 
-      - name: Run PR Intent Checker
-        # Revert to using the original action from its repository
-        uses: kevinjcwu/pr-intent-checker@main 
+      - name: Run PR Intent Checker (Context Parsing Branch)
+        # Use the new feature branch from the action repository
+        uses: kevinjcwu/pr-intent-checker@feature/context-parsing 
         id: intent_checker
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
