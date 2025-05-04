@@ -18,9 +18,9 @@ jobs:
         with:
           fetch-depth: 0 
 
-      - name: Run PR Intent Checker (Context Parsing Branch)
+      - name: Run PR Intent Checker (AST Context Branch)
         # Use the new feature branch from the action repository
-        uses: kevinjcwu/pr-intent-checker@feature/context-parsing 
+        uses: kevinjcwu/pr-intent-checker@feature/ast-context 
         id: intent_checker
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
