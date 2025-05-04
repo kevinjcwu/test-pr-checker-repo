@@ -5,9 +5,7 @@ def process_large_file(filepath: str) -> int:
     error_count = 0
     try:
         with open(filepath, 'r') as f:
-            content = f.read()
-            lines = content.splitlines()
-            for line in lines:
+            for line in f:
                 if "error" in line.lower():
                     error_count += 1
         print(f"Finished processing. Found {error_count} lines with 'error'.")
