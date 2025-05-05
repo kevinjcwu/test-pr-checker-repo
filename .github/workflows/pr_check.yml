@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0 
 
       - name: Run PR Intent Checker
-        uses: kevinjcwu/pr-intent-checker@mcp-integration # Use the branch with refactored code
+        uses: kevinjcwu/pr-intent-checker@main # Use the branch with refactored code
         id: intent_checker
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
